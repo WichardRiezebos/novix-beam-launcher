@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>Beam — browser probe</title>
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <script type="module" crossorigin src="./assets/probe.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/styles.js">
+    <link rel="stylesheet" crossorigin href="./assets/styles.css">
+  </head>
+  <body>
+    <div id="app" class="probe-page">
+      <header class="top">
+        <div class="brand"><span class="beam-mark" aria-hidden="true"></span> Beam probe</div>
+      </header>
+      <main>
+        <p class="lede">This page reports what the current browser can do. Open it from the TV's address, or through the launcher.</p>
+        <table class="probe-table">
+          <tbody id="probe-results"></tbody>
+        </table>
+        <h2>JSON</h2>
+        <pre id="probe-json" class="probe-json"></pre>
+        <button id="copy-probe" class="secondary" type="button">Copy JSON</button>
+        <p class="hint" id="copy-hint"></p>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "Beam — share your screen",
+  "short_name": "Beam",
+  "description": "Share your screen to Apple TV over your local network.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a0c10",
+  "theme_color": "#0a0c10",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0a0c10" />
+    <meta name="description" content="Share your screen to Apple TV. Everything stays on your local network." />
+    <title>Beam — share your screen</title>
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <script type="module" crossorigin src="./assets/main.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/styles.js">
+    <link rel="stylesheet" crossorigin href="./assets/styles.css">
+  </head>
+  <body>
+    <div id="app">
+      <header class="top">
+        <div class="brand"><span class="beam-mark" aria-hidden="true"></span> Beam</div>
+        <div id="tv-name" class="tv-name"></div>
+      </header>
+
+      <main>
+        <section id="connect-panel" class="panel">
+          <p class="lede">Share your screen with the Apple TV. Video goes straight to the TV and never leaves your network.</p>
+
+          <div id="target-row" class="target-row">
+            <label for="tv-address">TV address</label>
+            <div class="target-input">
+              <input id="tv-address" type="text" inputmode="url" autocomplete="off" spellcheck="false" placeholder="192.168.1.23:8080" />
+              <button id="save-target" class="secondary" type="button">Use TV</button>
+            </div>
+            <p id="target-hint" class="hint"></p>
+          </div>
+
+          <div id="pin-row">
+            <label for="pin">PIN on the TV</label>
+            <input id="pin" class="pin" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="4" pattern="[0-9]*" placeholder="••••" aria-describedby="pin-hint" />
+            <p id="pin-hint" class="hint">The four digits shown on the Apple TV.</p>
+          </div>
+
+          <div class="actions">
+            <button id="connect" class="primary" type="button">Connect</button>
+          </div>
+        </section>
+
+        <section id="ready-panel" class="panel" hidden>
+          <p class="status-line"><span class="dot ok" aria-hidden="true"></span> Connected to <strong id="ready-tv"></strong></p>
+
+          <div class="quality" role="group" aria-label="Quality">
+            <button id="sharp" type="button" data-mode="sharp" aria-pressed="true">
+              <span>Sharp</span><small>Text, slides, code</small>
+            </button>
+            <button id="smooth" type="button" data-mode="smooth" aria-pressed="false">
+              <span>Smooth</span><small>Motion and video</small>
+            </button>
+          </div>
+
+          <button id="share" class="primary big" type="button">Share screen</button>
+          <p class="hint">Pick a screen, window or tab in the browser picker.</p>
+        </section>
+
+        <section id="sharing-panel" class="panel" hidden>
+          <p class="status-line"><span class="dot live" aria-hidden="true"></span> Sharing to <strong id="sharing-tv"></strong></p>
+          <dl class="stats">
+            <div><dt>Resolution</dt><dd id="stat-resolution">—</dd></div>
+            <div><dt>Frame rate</dt><dd id="stat-fps">—</dd></div>
+            <div><dt>Bitrate</dt><dd id="stat-mbps">—</dd></div>
+            <div><dt>TV decode</dt><dd id="stat-decode">—</dd></div>
+          </dl>
+          <button id="stop" class="danger" type="button">Stop sharing</button>
+          <p class="hint">You can also use the browser's “Stop sharing” bar, or Menu on the remote.</p>
+        </section>
+
+        <section id="ended-panel" class="panel" hidden>
+          <h2>Session ended</h2>
+          <p class="hint" id="ended-reason"></p>
+          <button id="again" class="primary" type="button">Start again</button>
+        </section>
+
+        <div id="error" class="error" role="alert" hidden></div>
+        <div id="notice" class="notice" hidden></div>
+      </main>
+
+      <footer>
+        <span>Beam</span>
+        <span>LAN only</span>
+        <span id="mode-label"></span>
+      </footer>
+    </div>
+
+  </body>
+</html>

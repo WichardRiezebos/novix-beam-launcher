@@ -1,4 +1,4 @@
-const CACHE = "beam-20261110145150";
+const CACHE = "beam-20261110145210";
 const PRECACHE = ["./","./index.html","./probe.html","./icon.svg","./manifest.webmanifest","./assets/main-CM1QJWjN.js","./assets/probe-BAx-mOum.js","./assets/styles-BPmNY4_w.js","./assets/encoder.worker-BuoN2ac8.js","./assets/styles-Ci58jAXy.css"];
 
 self.addEventListener("install", (event) => {

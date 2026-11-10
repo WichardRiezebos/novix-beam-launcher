@@ -1,5 +1,5 @@
-const CACHE = "beam-20261110142748";
-const PRECACHE = ["./","./index.html","./probe.html","./icon.svg","./manifest.webmanifest","./assets/main-fSGBpD7W.js","./assets/probe-CTKQ2bMl.js","./assets/styles-DAVmAO50.js","./assets/encoder.worker-BuoN2ac8.js","./assets/styles-EO2D7uc_.css"];
+const CACHE = "beam-20261110144331";
+const PRECACHE = ["./","./index.html","./probe.html","./icon.svg","./manifest.webmanifest","./assets/main-CM1QJWjN.js","./assets/probe-BAx-mOum.js","./assets/styles-BPmNY4_w.js","./assets/encoder.worker-BuoN2ac8.js","./assets/styles-Ci58jAXy.css"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil((async () => {
